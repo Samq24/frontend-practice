@@ -25,9 +25,16 @@ El header debe cambiar de color al hacer scroll.
 ## Día 2 - Sección dinámica de productos
 
 ### Objetivo:
-Renderizar dinámicamente tarjetas de productos usando un arreglo de objetos en JavaScript.
+- Renderizar dinámicamente tarjetas de productos usando un arreglo de objetos en JavaScript.
+- Simular una revisión de código en un entorno laboral real, analizando y corrigiendo errores en un módulo desarrollado por otro integrante del equipo.
 
 ### Tareas realizadas:
 - Estructura HTML de la sección de productos.
 - Estilos con CSS Grid.
 - Generación dinámica con JavaScript.
+- Analicé el código HTML y JavaScript del módulo `user-profiles`.
+- Detecté un error de vinculación entre las clases del HTML y las referencias en el JS.
+- Apliqué la corrección agregando las clases específicas (`.maria-detail` y `.pedro-detail`).
+- Implementé una validación adicional para evitar errores si un elemento no existe (`if (target)`).
+- Verifiqué la correcta ejecución de los eventos y el comportamiento esperado de los botones.
+- Confirmé que el código funcionara sin errores en consola.

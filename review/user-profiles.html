@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <section class="users-section">
+        <h2>Usuarios Registrados</h2>
+        <div class="user-container">
+            <div class="user-card">
+                <h3>María González</h3>
+                <p>Frontend Developer</p>
+                <button class="detail-btn" onclick="showDetail('maria')">Ver Detalle</button>
+                <div class="user-detail maria-detail">
+                    <p>Email: maria@example.com</p>
+                    <p>Ubicación: San José, Costa Rica</p>
+                </div>
+             </div>
+
+            <div class="user-card">
+                <h3>Pedro López</h3>
+                <p>Backend Developer</p>
+                <button class="detail-btn" onclick="showDetail('pedro')">Ver Detalle</button>
+                <div class="user-detail pedro-detail">
+                    <p>Email: pedro@example.com</p>
+                    <p>Ubicación: Heredia, Costa Rica</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="user-profiles.js"></script>
+</body>
+</html>
