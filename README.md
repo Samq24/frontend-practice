@@ -21,3 +21,13 @@ El header debe cambiar de color al hacer scroll.
 
 ### Pendiente:
 - Hacer el header responsive (se implementará más adelante).
+
+## Día 2 - Sección dinámica de productos
+
+### Objetivo:
+Renderizar dinámicamente tarjetas de productos usando un arreglo de objetos en JavaScript.
+
+### Tareas realizadas:
+- Estructura HTML de la sección de productos.
+- Estilos con CSS Grid.
+- Generación dinámica con JavaScript.
