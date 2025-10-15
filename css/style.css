@@ -24,12 +24,28 @@ body {
     z-index: 100;
 }
 
+.nav-links {
+    display: flex;
+    gap: 18px;
+    align-items: center;
+}
+
 .nav-links a {
     margin: 0 15px;
     text-decoration: none;
     color: white;
     font-weight: 500;
 }
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
 
 .login-btn {
     background-color: #ff9800;

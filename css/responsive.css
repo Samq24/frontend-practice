@@ -1,0 +1,58 @@
+@media (max-width: 992px) {
+  .products-section {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .login-btn {
+    display: none;
+  }
+
+  .products-section {
+    grid-template-columns: 1fr;
+  }
+
+  .registerForm {
+    margin: 40px auto;
+    width: 90%;
+  }
+
+  .registerForm legend {
+    font-size: 1.4rem;
+    text-align: center;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #222;
+    padding: 12px 20px;
+    flex-direction: column;
+    gap: 10px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+  }
+
+  .nav-links a {
+    color: #fff;
+    padding: 8px 10px;
+    border-radius: 6px;
+    text-decoration: none;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .nav-links .login-btn {
+    display: block;
+    margin-top: 6px;
+  }
+}

@@ -53,3 +53,15 @@ Implementar un formulario de registro de usuario con validación de datos en tie
 
 ### Resultado:
 Formulario completamente funcional, con feedback visual para el usuario y manejo seguro de errores.
+
+## Día 4 - Menú responsive con comportamiento dinámico
+
+### Objetivo:
+Implementar un menú de navegación responsive que cambie su estructura y comportamiento según el tamaño de la pantalla.
+
+### Tareas realizadas:
+- Se agregó un botón toggle para mostrar u ocultar el menú en dispositivos móviles.
+- Se aplicaron estilos condicionales con CSS para adaptar el diseño al tamaño de pantalla.
+- Se implementó la lógica en JavaScript para alternar la visibilidad del menú.
+- Se corrigió la posición y el comportamiento del botón toggle.
+- Se validó el correcto funcionamiento en distintos tamaños de ventana.

@@ -8,9 +8,9 @@ window.addEventListener("scroll", () => {
 })
 
 const products= [
-    { name: "Audífonos Pro X", description: "Audio de alta fidelidad con cancelación de ruido.", price: "$120", image: "https://via.placeholder.com/300x200?text=Audifonos"},
-    { name: "Teclado Mecánico RGB", description: "Diseño ergonómico con retroiluminación personalizable.", price: "$90", image: "https://via.placeholder.com/300x200?text=Teclado"},
-    { name: "Ratón Inalámbrico", description: "Conexión Bluetooth y diseño cómodo.", price: "$40", image: "https://via.placeholder.com/300x200?text=Raton"},
+    { name: "Audífonos Pro X", description: "Audio de alta fidelidad con cancelación de ruido.", price: "$120", image: "https://placehold.co/300x200?text=Audifonos"},
+    { name: "Teclado Mecánico RGB", description: "Diseño ergonómico con retroiluminación personalizable.", price: "$90", image: "https://placehold.co/300x200?text=Teclado"},
+    { name: "Ratón Inalámbrico", description: "Conexión Bluetooth y diseño cómodo.", price: "$40", image: "https://placehold.co/300x200?text=Raton"},
 ];
 
 const container = document.getElementById("products-container");
@@ -77,3 +77,27 @@ function showError(input, message) {
         input.classList.add("error");
     }
 };
+
+document.addEventListener('DOMContentLoaded', () => {
+  const menuToggle = document.getElementById('menuToggle');
+  const navLinks = document.querySelector('.nav-links');
+
+  if (!menuToggle || !navLinks) return;
+
+  menuToggle.addEventListener('click', (e) => {
+    e.stopPropagation();
+    navLinks.classList.toggle('show');
+
+    const expanded = menuToggle.getAttribute('aria-expanded') === 'true';
+    menuToggle.setAttribute('aria-expanded', String(!expanded));
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!navLinks.classList.contains('show')) return;
+    const clickInside = e.target.closest('.nav-links') || e.target.closest('#menuToggle');
+    if (!clickInside) {
+      navLinks.classList.remove('show');
+      menuToggle.setAttribute('aria-expanded', 'false');
+    }
+  });
+});
