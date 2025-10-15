@@ -38,3 +38,18 @@ El header debe cambiar de color al hacer scroll.
 - Implementé una validación adicional para evitar errores si un elemento no existe (`if (target)`).
 - Verifiqué la correcta ejecución de los eventos y el comportamiento esperado de los botones.
 - Confirmé que el código funcionara sin errores en consola.
+
+## Día 3 - Formulario de registro con validación
+
+### Objetivo:
+Implementar un formulario de registro de usuario con validación de datos en tiempo real usando JavaScript, mostrando mensajes de error claros y un mensaje de éxito al completar correctamente.
+
+### Tareas realizadas:
+- Agregué una sección de registro con campos: nombre, correo electrónico y contraseña.
+- Validación de campos obligatorios y formato del correo.
+- Validación de longitud mínima de la contraseña (8 caracteres).
+- Implementación de mensajes de error dinámicos debajo de cada campo.
+- Mensaje de éxito al completar el formulario correctamente, con efecto de desaparición después de 3 segundos.
+
+### Resultado:
+Formulario completamente funcional, con feedback visual para el usuario y manejo seguro de errores.
