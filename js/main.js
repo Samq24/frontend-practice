@@ -31,6 +31,71 @@ products.forEach(product => {
 const form = document.getElementById("registerForm");
 const successMessage = document.getElementById("successMessage");
 
+const emailInput = document.getElementById("email");
+const emailError = emailInput.nextElementSibling;
+
+emailInput.addEventListener("input", () => {
+  const value = emailInput.value.trim();
+
+  if (value.includes(" ")) {
+    emailInput.classList.add("error");
+    emailInput.classList.remove("correct");
+    emailError.textContent = "El correo no debe tener espacios";
+    return;
+  }
+
+  if (value.includes("@") && value.includes(".")) {
+    emailInput.classList.add("correct");
+    emailInput.classList.remove("error");
+    emailError.textContent = "";
+  } else {
+    emailInput.classList.add("error");
+    emailInput.classList.remove("correct");
+    emailError.textContent = "El correo debe incluir '@' y '.'";
+  }
+});
+
+
+const passwordInput = document.getElementById("password");
+const passwordError = passwordInput.closest(".form-group").querySelector(".error-message");
+
+passwordInput.addEventListener("input", () => {
+  const value = passwordInput.value;
+
+  const hasUppercase = /[A-Z]/.test(value);
+  const hasNumber = /\d/.test(value);
+  const hasLetter = /[a-zA-Z]/.test(value);
+  const hasSpecialChar = /[!@#$%^&*(),.?":{}|<>]/.test(value);
+  const isLongEnough = value.length >= 8;
+
+  let errors = [];
+
+  if (!isLongEnough) errors.push("mínimo 8 caracteres");
+  if (!hasUppercase) errors.push("una mayúscula");
+  if (!hasLetter) errors.push("letras");
+  if (!hasNumber) errors.push("un número");
+  if (!hasSpecialChar) errors.push("un carácter especial");
+
+  if (errors.length > 0) {
+    passwordInput.classList.add("error");
+    passwordInput.classList.remove("correct");
+    passwordError.textContent = `Debe contener: ${errors.join(", ")}.`;
+  } else {
+    passwordInput.classList.add("correct");
+    passwordInput.classList.remove("error");
+    passwordError.textContent = "";
+  }
+});
+
+const togglePassword = document.getElementById("togglePassword");
+
+togglePassword.addEventListener("click", () => {
+  const isHidden = passwordInput.type === "password";
+  passwordInput.type = isHidden ? "text" : "password";
+  togglePassword.textContent = isHidden ? "(ocultar)" : "(ver)";
+});
+
+
 form.addEventListener("submit", (e) => {
   e.preventDefault();
   const name = document.getElementById("name");
@@ -59,7 +124,7 @@ form.addEventListener("submit", (e) => {
   }
 
   if (isValid) {
-        successMessage.textContent = "Registro exitoso ✅";
+        successMessage.textContent = "Registro exitoso";
         successMessage.style.opacity = "1";
         form.reset();
 

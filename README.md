@@ -65,3 +65,19 @@ Implementar un menú de navegación responsive que cambie su estructura y compor
 - Se implementó la lógica en JavaScript para alternar la visibilidad del menú.
 - Se corrigió la posición y el comportamiento del botón toggle.
 - Se validó el correcto funcionamiento en distintos tamaños de ventana.
+
+## Día 5 - Mejora de usabilidad y accesibilidad del formulario
+
+### Objetivo:
+Optimizar la experiencia de usuario del formulario de registro implementado el día 3, asegurando accesibilidad, legibilidad y feedback visual coherente con buenas prácticas de UI/UX.
+
+###  Tareas realizadas:
+- Accesibilidad y UI/UX
+- aria-live="polite" agregado a los small.error-message y al #successMessage.
+- Labels correctamente vinculados con for y id.
+- Feedback visual en los campos: .error y .correct.
+- Toggle de visibilidad de contraseña funcional
+- Botón de login dentro del menú móvil ya está incluido en el HTML.
+- Validaciones por input (email y password) funcionando en tiempo real.
+- Mensajes de error dinámicos y específicos, incluso con requerimientos de mayúsculas, números y caracteres especiales.
+- Prevent default en submit y feedback de éxito.
