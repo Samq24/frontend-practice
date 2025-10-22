@@ -15,7 +15,7 @@ const products= [
 
 const container = document.getElementById("products-container");
 
-products.forEach(product => {
+products.forEach((product, index) => {
     const card = document.createElement("div");
     card.classList.add("product-card");
     card.innerHTML = `
@@ -23,9 +23,22 @@ products.forEach(product => {
         <h3>${product.name}</h3>
         <p>${product.description}</p>
         <div class="price">${product.price}</div>
-        <button class="add-to-cart">Agregar al Carrito</button>
+        <button class="btn btn--primary add-to-cart">Agregar al Carrito</button>
     `;
+    card.style.animationDelay = `${index * 0.3}s`;
     container.appendChild(card);
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("fade-in");
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1 });
+
+    observer.observe(card);
+
 });
 
 const form = document.getElementById("registerForm");

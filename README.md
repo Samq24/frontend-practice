@@ -92,3 +92,14 @@ Comenzar a aplicar principios de UI/UX, consistencia, jerarquía visual y accesi
 - Jerarquía visual y consistencia en fuentes, botones y formularios.
 - Microinteracciones (hover con escala y sombra).
 - Preparación sólida para escalar estilos y mejorar accesibilidad.
+
+## Día 7 Modularidad, componentes y microinteracciones
+
+### Objetivo:
+Estructurar CSS y JS de forma modular, crear componentes reutilizables (cards, botones, formularios) y añadir microinteracciones visuales y de comportamiento para mejorar la experiencia de usuario.
+
+### Tareas realizadas:
+- Creación de CSS modular: variables, base, componentes y responsive.
+- Header fijo con cambio de fondo al hacer scroll.
+- Estilizado de botones (.btn--primary, .btn--secondary) con hover y transición.
+- Cards de productos con animación hover y efectos de fade-in al aparecer en pantalla.
