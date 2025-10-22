@@ -81,3 +81,14 @@ Optimizar la experiencia de usuario del formulario de registro implementado el d
 - Validaciones por input (email y password) funcionando en tiempo real.
 - Mensajes de error dinámicos y específicos, incluso con requerimientos de mayúsculas, números y caracteres especiales.
 - Prevent default en submit y feedback de éxito.
+
+## Día 6 – Diseño UI/UX básico y consistencia visual
+
+### Objetivo:
+Comenzar a aplicar principios de UI/UX, consistencia, jerarquía visual y accesibilidad.
+
+### Tareas realizadas:
+- Sistema completo de variables (colores, tipografía, spacing, sombras, transiciones).
+- Jerarquía visual y consistencia en fuentes, botones y formularios.
+- Microinteracciones (hover con escala y sombra).
+- Preparación sólida para escalar estilos y mejorar accesibilidad.
