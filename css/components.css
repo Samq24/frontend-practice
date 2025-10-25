@@ -37,6 +37,12 @@
     color: var(--color-light);
 }
 
+.btn:active {
+    transform: scale(0.97);
+    background-color: #ff8b75;
+    transition: transform 0.1s, background-color 0.1s;
+}
+
 .product-card{
     background-color: var(--color-light);
     border-radius: var(--border-radius);
@@ -88,9 +94,7 @@
   text-align: center;
 }
 
-input:focus {
-  outline: none;
-}
+input:focus { outline: none; }
 
 input {
 width: 100%;

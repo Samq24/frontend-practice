@@ -23,7 +23,7 @@ products.forEach((product, index) => {
         <h3>${product.name}</h3>
         <p>${product.description}</p>
         <div class="price">${product.price}</div>
-        <button class="btn btn--primary add-to-cart">Agregar al Carrito</button>
+        <button class="btn btn--primary add-to-cart" aria-label="Agregar ${product.name} al carrito">Agregar al Carrito</button>
     `;
     card.style.animationDelay = `${index * 0.3}s`;
     container.appendChild(card);
@@ -41,6 +41,30 @@ products.forEach((product, index) => {
 
 });
 
+const addToCartButtons = document.querySelectorAll(".add-to-cart");
+
+addToCartButtons.forEach(button => {
+    button.addEventListener("click", () => {
+        button.textContent = "✓ Agregado";
+        button.disabled = true;
+
+        setTimeout(() => {
+            button.textContent = "Agregar al Carrito";
+            button.disabled = false;
+        }, 1500);
+
+        button.animate([
+            { transform: 'scale(1)' },
+            { transform: 'scale(1.2)' },
+            { transform: 'scale(1)' }
+        ], {
+            duration: 300,
+            easing: 'ease-out'
+        });
+    });
+});
+
+
 const form = document.getElementById("registerForm");
 const successMessage = document.getElementById("successMessage");
 
@@ -57,14 +81,15 @@ emailInput.addEventListener("input", () => {
     return;
   }
 
-  if (value.includes("@") && value.includes(".")) {
+  const emailregex = /^(?!.*\.\.)[a-zA-Z0-9._%+-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*\.[a-zA-Z]{2,}$/;
+  if (emailregex.test(value)) {
     emailInput.classList.add("correct");
     emailInput.classList.remove("error");
     emailError.textContent = "";
   } else {
     emailInput.classList.add("error");
     emailInput.classList.remove("correct");
-    emailError.textContent = "El correo debe incluir '@' y '.'";
+    emailError.textContent = "Correo inválido";
   }
 });
 
@@ -106,6 +131,7 @@ togglePassword.addEventListener("click", () => {
   const isHidden = passwordInput.type === "password";
   passwordInput.type = isHidden ? "text" : "password";
   togglePassword.textContent = isHidden ? "(ocultar)" : "(ver)";
+  togglePassword.setAttribute("aria-pressed", String(isHidden));
 });
 
 
@@ -137,23 +163,34 @@ form.addEventListener("submit", (e) => {
   }
 
   if (isValid) {
-        successMessage.textContent = "Registro exitoso";
-        successMessage.style.opacity = "1";
-        form.reset();
+    const firstErrorInput = document.querySelector(".error");
+    if (firstErrorInput) {
+        firstErrorInput.focus();
+        return;
+  }
 
-        setTimeout(() => {
-            successMessage.style.opacity = "0";
-        }, 3000);
-    }
+
+  successMessage.textContent = "Registro exitoso";
+  successMessage.style.opacity = "1";
+  form.reset();
+
+  setTimeout(() => {
+    successMessage.style.opacity = "0";
+  }, 3000);
+  }
 
 });
 
 function showError(input, message) {
-    const errorSpan = input.nextElementSibling;
-    if (errorSpan) {
-        errorSpan.textContent = message;
-        input.classList.add("error");
-    }
+    const formGroup = input.closest(".form-group");
+    if (!formGroup) return;
+
+    const errorSpan = formGroup.querySelector(".error-message");
+    if (!errorSpan) return;
+
+    errorSpan.textContent = message;
+    input.classList.add("error");
+    input.classList.remove("correct");
 };
 
 document.addEventListener('DOMContentLoaded', () => {

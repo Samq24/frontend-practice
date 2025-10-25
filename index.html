@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,8 +13,8 @@
 <body>
     <header class="main-header">
         <div class="logo">FrontendApp</div>
-        <button id="menuToggle" class="menu-toggle" aria-label="Abrir Menú" aria-expanded="false">☰</button>
-        <nav class="nav-links">
+        <button id="menuToggle" class="menu-toggle" aria-label="Abrir Menú de navegación" aria-expanded="false" aria-controls="mainNavigation">☰</button>
+        <nav class="nav-links" id="mainNavigation" role="navigation">
             <a href="#">Inicio</a>
             <a href="#">Proyectos</a>
             <a href="#">Blog</a>
@@ -29,9 +29,9 @@
             <p>Desarrollo de tareas Frontend Junior</p>
         </section>
 
-        <section class="products-section">
+        <section class="products-section" tabindex="0">
             <h2>Nuestros Productos</h2>
-            <div class="products-container" id="products-container"></div>
+            <div class="products-container" id="products-container" role="region" aria-label="Lista de Productos disponibles"></div>
         </section>
 
         <form id="registerForm">
@@ -40,22 +40,22 @@
                 <div class="form-group">
                 <label for="name">Nombre completo</label>
                 <input type="text" id="name" placeholder="Ej. Juan Pérez">
-                <small class="error-message" aria-live="polite"></small>
+                <small class="error-message" aria-live="polite" role="alert"></small>
                 </div>
 
                 <div class="form-group">
                 <label for="email">Correo electrónico</label>
                 <input type="text" id="email" placeholder="Ej. correo@ejemplo.com">
-                <small class="error-message" aria-live="polite"></small>
+                <small class="error-message" aria-live="polite" role="alert"></small>
                 </div>
 
                 <div class="form-group">
                     <label for="password">Contraseña</label>
                     <div class="password-container">
                         <input type="password" id="password" placeholder="Mínimo 8 caracteres">
-                        <button type="button" id="togglePassword">(ver)</button>
+                        <button type="button" id="togglePassword" aria-label="Mostrar Contraseña" aria-pressed="false">(ver)</button>
                     </div>
-                    <small class="error-message"></small>
+                    <small class="error-message" aria-live="polite" role="alert"></small>
                 </div>
 
                 <button type="submit" class="btn btn--secondary">Registrarse</button>

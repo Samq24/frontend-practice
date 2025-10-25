@@ -103,3 +103,17 @@ Estructurar CSS y JS de forma modular, crear componentes reutilizables (cards, b
 - Header fijo con cambio de fondo al hacer scroll.
 - Estilizado de botones (.btn--primary, .btn--secondary) con hover y transición.
 - Cards de productos con animación hover y efectos de fade-in al aparecer en pantalla.
+
+## Día 8 Mejora de UX y accesibilidad
+
+### Objetivo:
+Experiencia de usuario (UX) y accesibilidad web (A11Y), refinar la interacción general del sitio.
+
+### Tareas realizadas: 
+- Implementación de menú de navegación accesible con toggle para móviles y soporte ARIA (aria-label, aria-expanded, aria-controls).
+- Agregado de roles y etiquetas semánticas (role="navigation", role="region") para mejorar accesibilidad.
+- Inclusión de aria-live="polite" en mensajes de error y éxito del formulario.
+- Correo electrónico validado con regex robusta y manejo de espacios.
+- Contraseña validada con requisitos: longitud mínima, mayúsculas, números, letras y caracteres especiales.
+- Funcionalidad para mostrar/ocultar contraseña con botón accesible (aria-pressed).
+- Uso de tabindex para mejorar navegación por teclado en sección de productos.
